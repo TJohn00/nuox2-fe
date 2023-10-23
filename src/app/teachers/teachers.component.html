@@ -1,0 +1,28 @@
+<div class="teacher-container">
+    <div class="teacher-list">
+      <h2>List of Teachers</h2>
+      <div class="search-bar">
+        <input type="text" placeholder="Search teachers" [(ngModel)]="searchQuery" (input)="onSearchChange()">
+      </div>
+      <div class="teacher-cards">
+        <mat-card class="teacher-card" *ngFor="let teacher of teachers" (click)="openTeacherProfile(teacher.id)">
+          <mat-card-header>
+            <img
+              mat-card-avatar
+              class="teacher-image"
+              [src]="getImageUrl(teacher.profilePicture)"
+              [alt]="teacher.firstName + ' ' + teacher.lastName"
+              (error)="handleImageError($event)"
+            />
+            <mat-card-title>{{ teacher.firstName }} {{ teacher.lastName }}</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <mat-chip-list>
+              <mat-chip *ngFor="let subject of teacher.Subjects">{{ subject.name }}</mat-chip>
+            </mat-chip-list>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+  

@@ -1,0 +1,31 @@
+<div class="teacher-add">
+    <h2>Add Teacher</h2>
+    <form (ngSubmit)="addTeacher()">
+      <div class="form-group">
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" name="firstName" [(ngModel)]="firstName" required>
+      </div>
+      <div class="form-group">
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" name="lastName" [(ngModel)]="lastName" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" [(ngModel)]="email" required>
+      </div>
+      <div class="form-group">
+        <label for="phone">Phone:</label>
+        <input type="text" id="phone" name="phone" [(ngModel)]="phone">
+      </div>
+      <div class="form-group">
+        <label for="roomNumber">Room Number:</label>
+        <input type="text" id="roomNumber" name="roomNumber" [(ngModel)]="roomNumber">
+      </div>
+      <button type="submit">Add Teacher</button>
+    </form>
+
+    <ng-container *ngIf="status">
+        <div class="status-message">{{ status }}</div>
+      </ng-container>
+  </div>
+  

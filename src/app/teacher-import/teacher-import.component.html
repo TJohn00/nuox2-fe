@@ -1,0 +1,10 @@
+<div class="csv-import">
+    <h2>Teacher CSV Import</h2>
+    <label for="csvFile" class="file-label">
+        Choose a CSV file
+        <input type="file" id="csvFile" #fileInput accept=".csv" (change)="onFileSelected($event)">
+    </label>
+    <button class="import-button" (click)="importCSV()">Import CSV</button>
+</div>
+
+<div class="status-message" *ngIf="status">{{ status }}</div>

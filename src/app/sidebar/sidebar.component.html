@@ -1,0 +1,31 @@
+<div class="sidebar">
+    <h3 class="sidebar-title">Navigation</h3>
+    <ul class="sidebar-list">
+      <li class="sidebar-dropdown">
+        <a class="sidebar-link" (click)="toggleTeacherDropdown()">Teachers</a>
+        <ul *ngIf="teacherDropdownOpen" class="sidebar-submenu">
+            <li>
+                <a routerLink="/teachers" routerLinkActive="active" class="sidebar-link">
+                  View Teachers
+                </a>
+              </li>
+          <li>
+            <a routerLink="/teacherAdd" routerLinkActive="active" class="sidebar-link">
+              Add Teachers
+            </a>
+          </li>
+          <li>
+            <a routerLink="/teacherImport" routerLinkActive="active" class="sidebar-link">
+              Import Teachers
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a routerLink="/subjects" routerLinkActive="active" class="sidebar-link">
+          Subjects
+        </a>
+      </li>
+    </ul>
+  </div>
+  

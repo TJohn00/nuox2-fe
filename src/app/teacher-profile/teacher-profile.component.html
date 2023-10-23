@@ -1,0 +1,37 @@
+<div class="teacher-card">
+  <div class="center-content">
+    <mat-card-header>
+      <mat-card-title>{{ teacher.firstName }} {{ teacher.lastName }}</mat-card-title>
+      <mat-card-subtitle>Email: {{ teacher.emailAddress }}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="teacher-details">
+        <label for="profilePictureInput" class="profile-picture-label">
+          <img
+            [src]="getImageUrl(teacher.profilePicture)"
+            [alt]="teacher.firstName + ' ' + teacher.lastName"
+            (error)="setDefaultImage()"
+            class="profile-picture"
+            [style.max-width.px]="200"
+            [style.max-height.px]="200"
+          >
+          <input
+            type="file"
+            id="profilePictureInput"
+            #fileInput
+            style="display: none;"
+            (change)="onFileSelected($event)"
+          >
+        </label>
+        <div class="teacher-contact">
+          <p><strong>Phone:</strong> {{ teacher.phone }}</p>
+          <p><strong>Room Number:</strong> {{ teacher.roomNumber }}</p>
+        </div>
+      </div>
+      <h3>Subjects</h3>
+      <mat-chip-list>
+        <mat-chip *ngFor="let subject of teacher.Subjects">{{ subject.name }}</mat-chip>
+      </mat-chip-list>
+    </mat-card-content>
+  </div>
+</div>
